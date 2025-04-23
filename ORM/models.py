@@ -5,7 +5,6 @@ class student(Model):
         id = fields.IntField(pk=True)
         name = fields.CharField(max_length=50,description="姓名")
         password = fields.CharField(max_length=50,description="密码")
-        email = fields.CharField(max_length=100, unique=True,description="邮件")
         sno = fields.IntField(description="学号")
         created_at = fields.DatetimeField(auto_now_add=True)
 
@@ -13,7 +12,7 @@ class student(Model):
         #一对多
         clas=fields.ForeignKeyField("models.Clas",related_name="student")
         # 多对多
-        Cours=fields.ManyToManyField("models.Course",related_name="student")
+        cours=fields.ManyToManyField("models.Course",related_name="student")
 
 class Course(Model):
     id = fields.IntField(pk=True)
