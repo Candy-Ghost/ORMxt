@@ -6,7 +6,11 @@ from pydantic import BaseModel, field_validator
 from fastapi.templating import Jinja2Templates
 from fastapi import Request
 from fastapi.exceptions import HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 student_api=APIRouter()
+
+
+
 
 
 @student_api.get("/")
