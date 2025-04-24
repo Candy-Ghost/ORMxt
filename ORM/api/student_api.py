@@ -13,7 +13,7 @@ student_api=APIRouter()
 
 
 
-@student_api.get("/")
+@student_api.get("/",description="这是一个演示 FastAPI 接口注释的示例", summary="获取all信息",)
 async def getallstudent():
     # Students= await student.all()
     # print(Students)
@@ -57,7 +57,7 @@ async def indexstudent(request:Request):
         }
     )
 
-@student_api.get("/one")
+@student_api.get("/one",)
 def getoenstudent(id:int):
     return {
         "操作":f"返回学生{id}的信息"
